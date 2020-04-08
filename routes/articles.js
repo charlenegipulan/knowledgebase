@@ -74,4 +74,19 @@ router.put('/', function(req, res, next) {
   });
 });
 
+// Remove Article
+router.delete('/:id', function(req, res, next){
+  var id = req.params.id;
+
+  //Create Article
+  Article.removeArticle(id, function(err, article){
+    if (err) {
+      console.log(err);
+    }
+
+    res.location('/articles');
+    res.redirect('/articles');
+  });
+});
+
 module.exports = router;
