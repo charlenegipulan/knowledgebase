@@ -55,5 +55,23 @@ router.post('/', function(req, res, next) {
   });
 });
 
+//Update Article
+router.put('/', function(req, res, next) {
+  var id = req.body.id;
+  var data = {
+    title: req.body.title,
+    category: req.body.category,
+    body: req.body.body
+  };
+  // Create Article
+  Article.update(id, data, function(err, article) {
+    if (err) {
+      console.log(err);
+    }
+
+    res.location('/article');
+    res.redirect('/articles');
+  });
+});
 
 module.exports = router;
