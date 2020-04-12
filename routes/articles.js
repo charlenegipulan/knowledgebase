@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
       console.log(err)
     }
     res.json(articles);
-  })
+  });
 });
 
 router.get('/:id', function(req, res, next) {
@@ -19,7 +19,7 @@ router.get('/:id', function(req, res, next) {
       console.log(err)
     }
     res.json(article);
-  })
+  });
 });
 
 router.get('/category/:category', function(req, res, next) {
@@ -28,7 +28,7 @@ router.get('/category/:category', function(req, res, next) {
       console.log(err)
     }
     res.json(articles);
-  })
+  });
 });
 
 router.post('/', function(req, res, next) {

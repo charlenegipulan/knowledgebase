@@ -11,4 +11,10 @@ angular.module("kB")
         $scope.cat_articles = data.data;
         $scope.category = $routeParams.category;
     });
-}]);
+}])
+
+.controller('ArticleDetailsCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
+    $http.get('/articles/'+$routeParams.id).then(function(data) {
+        $scope.article = data.data;
+    });
+}])
