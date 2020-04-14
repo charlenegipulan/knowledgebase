@@ -64,12 +64,12 @@ router.put('/', function(req, res, next) {
     body: req.body.body
   };
   // Create Article
-  Article.update(id, data, function(err, article) {
+  Article.updateArticle(id, data, function(err, article) {
     if (err) {
       console.log(err);
     }
 
-    res.location('/article');
+    res.location('/articles');
     res.redirect('/articles');
   });
 });

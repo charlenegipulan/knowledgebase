@@ -54,7 +54,7 @@ module.exports.updateArticle = function(id, data, callback) {
 
     Article.findById(id, function(err,article) {
         if(!article){
-            return next(new  Error('Could not load article'));
+            return next(new Error('Could not load article'));
         } else {
             //update
             article.title = title;
